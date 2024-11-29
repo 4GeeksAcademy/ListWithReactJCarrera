@@ -6,7 +6,9 @@ import { ToDoList } from "./ToDoList";
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
+		
+		<div className="form-control form-control-sm text-center">
+		
 			<h1 className="text-center mt-5">Making a list 📝</h1>
 	        
 			<div>
