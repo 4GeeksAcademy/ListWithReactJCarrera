@@ -10,7 +10,7 @@ export const NewToDo = ({currentDescriptions, changeDescriptions}) => {
 	}
 
 	return <div>
-		< input type="text" placeholder="what needs to be done?" value={newTodoDescription} onChange={(event) => changeNewTodoDescription(event.target.value)} 
+		<input type="text" className="form-control" placeholder="what needs to be done?" value={newTodoDescription} onChange={(event) => changeNewTodoDescription(event.target.value)} 
 		onKeyDown={ (event)=>{
           console.log (event)
 		  if (event.key == "Enter" && newTodoDescription != ""){
