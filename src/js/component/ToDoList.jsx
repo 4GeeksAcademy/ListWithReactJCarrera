@@ -10,7 +10,7 @@ export const ToDoList = () => {
 	return <>
 		<NewToDo  changeDescriptions={setCurrentDescriptions} currentDescriptions={currentDescriptions} />
 		<ul className="list-group">
-			{currentDescriptions.map((description, index) => <ToDo key={index} index={index} description={description} setCurrentDescriptions={setCurrentDescriptions} currentDescriptions={currentDescriptions} />)}
+			{currentDescriptions.map((todo, index) => <ToDo key={todo.id} index={index} id={todo.id} description={todo.label} setCurrentDescriptions={setCurrentDescriptions} currentDescriptions={currentDescriptions} />)}
 		</ul>
 		{currentDescriptions.length > 0 && <div> currently there are {currentDescriptions.length} elemento{currentDescriptions.length > 1 ? "s": ""}</div>}
 		{currentDescriptions.length === 0 && <div> Currently There are no Items</div>}

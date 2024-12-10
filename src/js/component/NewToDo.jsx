@@ -1,11 +1,16 @@
 import React, { useState }  from "react";
+import { TodoAPI } from "../tools/TodoAPI";
 
 export const NewToDo = ({currentDescriptions, changeDescriptions}) => {
 	const [newTodoDescription, changeNewTodoDescription] = useState("");
 
-	function createNewTodo(newTodoDescription) {
+	async function createNewTodo(newTodoDescription) {
 	
-		changeDescriptions([...currentDescriptions, newTodoDescription]);
+		const todoCreated = await TodoAPI.post({url: "/todos/jesscp07", params: {
+			"label": newTodoDescription,
+			"is_done": false
+		  }})
+		changeDescriptions([...currentDescriptions, todoCreated]);
 		changeNewTodoDescription("");
 	}
 
