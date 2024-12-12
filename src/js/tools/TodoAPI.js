@@ -21,6 +21,9 @@ export const TodoAPI = {
                 break;
 
             case "post":
+                options.body = JSON.stringify(options.params);
+                break;
+            
             case "put":
                 options.body = JSON.stringify(options.params);
                 break;
@@ -57,7 +60,7 @@ export const TodoAPI = {
             method: "post",
         })
     },
-    post: async function (options) {
+    put: async function (options) {
         return await TodoAPI.request({
             ...options,
             method: "put",

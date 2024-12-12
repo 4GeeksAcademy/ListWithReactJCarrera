@@ -2,7 +2,7 @@ import React from "react";
 import { ToDoList } from "./ToDoList";
 import { TodoAPI } from "../tools/TodoAPI";
 
-export const ToDo = ({ id, description, currentDescriptions, setCurrentDescriptions, index}) => {
+export const ToDo = ({  id, description, currentDescriptions, setCurrentDescriptions, index}) => {
 	
 	async function deleteTodo(id) {
 		console.log({id});
