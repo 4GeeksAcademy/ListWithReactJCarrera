@@ -16,13 +16,16 @@ export const TodoAPI = {
         switch (options.method) {
             case "get":
             case "delete":
-                options.url += TodoAPI.encodeGetParams(options.params);
+                // concatena al final los parametros precedidos por "?" acorde al protocolo http
+                options.url += `?${TodoAPI.encodeGetParams(options.params)}`;
                 break;
+
             case "post":
+            case "put":
                 options.body = JSON.stringify(options.params);
                 break;
             
-            
+        
         }
 
         const result = await fetch(`${TodoAPI.baseUrl}${options.url}`, {
@@ -52,6 +55,12 @@ export const TodoAPI = {
         return await TodoAPI.request({
             ...options,
             method: "post",
+        })
+    },
+    post: async function (options) {
+        return await TodoAPI.request({
+            ...options,
+            method: "put",
         })
     }
     
